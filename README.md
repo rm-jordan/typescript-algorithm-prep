@@ -15,54 +15,102 @@ npm install
 | `npm test` | Run tests in watch mode |
 | `npm run test:run` | Run tests once (CI-friendly) |
 | `npm run typecheck` | Type-check without emitting |
-| `npm test -- two-sum` | Run tests for one problem (match folder name) |
-| `npm run run src/problems/two-sum/two-sum.ts` | Run a single file with `tsx` |
+| `npm test -- remove-duplicates` | Run tests for one problem (match folder name) |
+| `npm run run src/problems/arrays/remove-duplicates/remove-duplicates.ts` | Run a file with `tsx` (see `console.log` output) |
 
 ## Project structure
 
-Each problem lives in its own folder under `src/problems/`:
+Problems are grouped by topic. Each problem lives in its own folder:
 
 ```
-src/problems/<slug>/
-  <name>.ts        # problem description + exported stub
-  <name>.test.ts   # Vitest tests
+src/problems/<category>/<slug>/
+  <name>.ts
+  <name>.test.ts
 ```
 
-Most folders use matching names (e.g. `two-sum/two-sum.ts`). A few use shorter filenames: `valid-palindrome/palidrome.ts`, `largest-sum-consecutive-num/largest.ts`, `count-character-frequency/count.ts`.
+A few folders use shorter filenames: `strings/valid-palindrome/palidrome.ts`, `arrays/largest-sum-consecutive-num/largest.ts`, `hash-maps/count-character-frequency/count.ts`.
 
 Stubs export the function and return a placeholder so tests compile; implement the logic and tests will pass.
 
-## Problems
+---
 
-Each problem file includes a `Hint:` comment with the suggested pattern.
+## Arrays
 
-| Folder | Function | Style | Topic |
-|--------|----------|-------|-------|
-| `find-missing-number` | `findMissingNumber` | math / hash set | Find the missing value in 1..n |
-| `mask-string` | `maskString` | string manipulation | Mask all but the last 4 characters |
-| `first-unique-character` | `firstUniqueCharacter` | hash map | First non-repeating character (case-insensitive) |
-| `sort-odd-numbers` | `sortOddNumbers` | array manipulation | Sort odds in place, evens stay fixed |
-| `two-sum` | `twoSum` | hash map | Two indices that sum to target |
-| `group-anagrams` | `groupAnagrams` | hash map | Group words that are anagrams |
-| `move-zeroes` | `moveZeroes` | two pointers | Move zeroes to the end (new array) |
-| `find-longest-word` | `findLongestWord` | string parsing | Longest word in a sentence (ignore punctuation) |
-| `valid-parentheses` | `isValidParentheses` | stack | Valid `()[]{}` bracket sequences |
-| `remove-duplicates` | `removeDuplicates` | hash set | Remove duplicates, preserve order |
-| `valid-palindrome` | `isPalindrome` | two pointers | Palindrome check (ignore spaces & case) |
-| `largest-sum-consecutive-num` | `maxSubArraySum` | sliding window | Max sum of consecutive subarray of size k |
-| `count-character-frequency` | `maxSubArraySum` | sliding window | Same sliding-window problem as above |
-| `contains-duplicate` | `containsDuplicate` | hash set | Any value appears more than once |
-| `fizz-buzz` | `fizzBuzz` | iteration (simulation) | FizzBuzz from 1 to n |
-| `merge-sorted-arrays` | `mergeSortedArrays` | two pointers | Merge two sorted arrays without `sort()` |
-| `largest-in-each-array` | `largestInEachArray` | array iteration | Largest number in each nested array |
-| `reverse-words` | `reverseWords` | string manipulation | Reverse word order in a sentence |
-| `intersection` | `intersection` | hash set | Unique common values between two arrays |
-| `count-vowels` | `countVowels` | string iteration | Count vowels (case-insensitive) |
+| Folder | Function | Style |
+|--------|----------|-------|
+| `arrays/remove-duplicates` | `removeDuplicates` | hash set |
+| `arrays/contains-duplicate` | `containsDuplicate` | hash set |
+| `arrays/move-zeroes` | `moveZeroes` | two pointers |
+| `arrays/find-missing-number` | `findMissingNumber` | math / hash set |
+| `arrays/largest-in-each-array` | `largestInEachArray` | array iteration |
+| `arrays/intersection` | `intersection` | hash set |
+| `arrays/sort-odd-numbers` | `sortOddNumbers` | array manipulation |
+| `arrays/merge-sorted-arrays` | `mergeSortedArrays` | two pointers |
+| `arrays/largest-sum-consecutive-num` | `maxSubArraySum` | sliding window |
+
+## Strings
+
+| Folder | Function | Style |
+|--------|----------|-------|
+| `strings/count-vowels` | `countVowels` | string iteration |
+| `strings/reverse-words` | `reverseWords` | string manipulation |
+| `strings/find-longest-word` | `findLongestWord` | string parsing |
+| `strings/mask-string` | `maskString` | string manipulation |
+| `strings/valid-palindrome` | `isPalindrome` | two pointers |
+
+## Hash maps / frequency counters
+
+| Folder | Function | Style |
+|--------|----------|-------|
+| `hash-maps/count-character-frequency` | `maxSubArraySum` | sliding window |
+| `hash-maps/first-unique-character` | `firstUniqueCharacter` | hash map |
+| `hash-maps/two-sum` | `twoSum` | hash map |
+| `hash-maps/group-anagrams` | `groupAnagrams` | hash map |
+
+## Stacks
+
+| Folder | Function | Style |
+|--------|----------|-------|
+| `stacks/valid-parentheses` | `isValidParentheses` | stack |
+
+## Basic logic / math
+
+| Folder | Function | Style |
+|--------|----------|-------|
+| `basic-logic/fizz-buzz` | `fizzBuzz` | iteration (simulation) |
+
+---
+
+## By pattern (cross-reference)
+
+Some problems fit multiple patterns. Each problem has one folder; use this table to study by technique.
+
+### Sets
+- `arrays/remove-duplicates`
+- `arrays/contains-duplicate`
+- `arrays/intersection`
+
+### Two pointers
+- `strings/valid-palindrome`
+- `arrays/merge-sorted-arrays`
+- `arrays/sort-odd-numbers`
+- `arrays/move-zeroes`
+
+### Sliding window
+- `arrays/largest-sum-consecutive-num`
+- `hash-maps/count-character-frequency` (same problem)
+
+### Nested loops / traversal
+- `arrays/largest-in-each-array`
+- `hash-maps/group-anagrams`
+
+### Basic logic / math (also)
+- `arrays/find-missing-number` (also under Arrays)
 
 ## Adding a problem
 
-1. Copy `src/problems/_template/` to `src/problems/<slug>/`
-2. Rename files, add the problem comment block, export your function, and write tests
+1. Copy `src/problems/_template/` into the right category folder, e.g. `src/problems/arrays/my-problem/`
+2. Rename files, add the problem comment block (`Hint:` + description), export your function, and write tests
 3. Run `npm test`
 
 ## Helpers
