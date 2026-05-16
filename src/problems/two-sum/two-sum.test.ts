@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { twoSum } from "./solution.js";
+import { twoSum } from "./two-sum.js";
 
 describe("twoSum", () => {
   it("returns indices for a valid pair", () => {
@@ -12,5 +12,9 @@ describe("twoSum", () => {
 
   it("works when the pair is not at the start", () => {
     expect(twoSum([3, 2, 4], 6)).toEqual([1, 2]);
+  });
+
+  it("works with negative numbers", () => {
+    expect(twoSum([-1, -2, -3, -4, -5], -8)).toEqual([2, 4]);
   });
 });
