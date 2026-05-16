@@ -1,4 +1,6 @@
 /*
+Hint: two pointers
+
 Write a function that moves all zeroes in an array
 to the end while keeping the order of non-zero
 elements the same.

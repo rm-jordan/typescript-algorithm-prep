@@ -1,4 +1,6 @@
 /*
+Hint: math (sum formula) or hash set
+
 You are given an array containing numbers from 1 to n,
 but one number is missing.
 

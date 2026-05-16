@@ -1,4 +1,6 @@
 /*
+Hint: hash map (group by sorted key or character count)
+
 Write a function that groups words that are anagrams
 of each other.
 

@@ -1,4 +1,6 @@
 /*
+Hint: string parsing
+
 Write a function that returns the longest word
 in a sentence.
 

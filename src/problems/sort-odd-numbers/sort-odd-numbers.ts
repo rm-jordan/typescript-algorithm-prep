@@ -1,4 +1,6 @@
 /*
+Hint: array manipulation (extract, sort, rebuild)
+
 Write a function that sorts only the odd numbers
 in an array while leaving even numbers in their
 original positions.

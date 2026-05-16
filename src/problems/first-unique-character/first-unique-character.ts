@@ -1,4 +1,6 @@
 /*
+Hint: hash map (frequency count)
+
 Write a function that returns the first character
 that does not repeat in a string.
 

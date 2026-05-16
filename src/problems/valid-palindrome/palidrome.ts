@@ -1,4 +1,6 @@
 /*
+Hint: two pointers
+
 Write a function that checks whether a string is a palindrome.
 
 Requirements:

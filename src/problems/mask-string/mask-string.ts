@@ -1,4 +1,6 @@
 /*
+Hint: string manipulation
+
 Write a function that masks all characters in a string
 except the last 4 characters.
 

@@ -1,4 +1,6 @@
 /*
+Hint: sliding window
+
 Write a function that returns the largest sum of
 consecutive numbers of length "size".
 

@@ -1,4 +1,6 @@
 /*
+Hint: hash map
+
 Write a function that returns the indices of two numbers
 that add up to the target value.
 

@@ -1,4 +1,6 @@
 /*
+Hint: stack
+
 Write a function that determines whether a string
 containing brackets is valid.
 

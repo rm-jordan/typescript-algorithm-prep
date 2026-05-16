@@ -1,4 +1,6 @@
 /*
+Hint: hash set
+
 Write a function that removes duplicate values from an array.
 
 Requirements:

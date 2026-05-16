@@ -34,21 +34,23 @@ Stubs export the function and return a placeholder so tests compile; implement t
 
 ## Problems
 
-| Folder | Function | Topic |
-|--------|----------|-------|
-| `find-missing-number` | `findMissingNumber` | Find the missing value in 1..n |
-| `mask-string` | `maskString` | Mask all but the last 4 characters |
-| `first-unique-character` | `firstUniqueCharacter` | First non-repeating character (case-insensitive) |
-| `sort-odd-numbers` | `sortOddNumbers` | Sort odds in place, evens stay fixed |
-| `two-sum` | `twoSum` | Two indices that sum to target |
-| `group-anagrams` | `groupAnagrams` | Group words that are anagrams |
-| `move-zeroes` | `moveZeroes` | Move zeroes to the end (new array) |
-| `find-longest-word` | `findLongestWord` | Longest word in a sentence (ignore punctuation) |
-| `valid-parentheses` | `isValidParentheses` | Valid `()[]{}` bracket sequences |
-| `remove-duplicates` | `removeDuplicates` | Remove duplicates, preserve order |
-| `valid-palindrome` | `isPalindrome` | Palindrome check (ignore spaces & case) |
-| `largest-sum-consecutive-num` | `maxSubArraySum` | Max sum of consecutive subarray of size k |
-| `count-character-frequency` | `maxSubArraySum` | Same sliding-window problem as above |
+Each problem file includes a `Hint:` comment with the suggested pattern.
+
+| Folder | Function | Style | Topic |
+|--------|----------|-------|-------|
+| `find-missing-number` | `findMissingNumber` | math / hash set | Find the missing value in 1..n |
+| `mask-string` | `maskString` | string manipulation | Mask all but the last 4 characters |
+| `first-unique-character` | `firstUniqueCharacter` | hash map | First non-repeating character (case-insensitive) |
+| `sort-odd-numbers` | `sortOddNumbers` | array manipulation | Sort odds in place, evens stay fixed |
+| `two-sum` | `twoSum` | hash map | Two indices that sum to target |
+| `group-anagrams` | `groupAnagrams` | hash map | Group words that are anagrams |
+| `move-zeroes` | `moveZeroes` | two pointers | Move zeroes to the end (new array) |
+| `find-longest-word` | `findLongestWord` | string parsing | Longest word in a sentence (ignore punctuation) |
+| `valid-parentheses` | `isValidParentheses` | stack | Valid `()[]{}` bracket sequences |
+| `remove-duplicates` | `removeDuplicates` | hash set | Remove duplicates, preserve order |
+| `valid-palindrome` | `isPalindrome` | two pointers | Palindrome check (ignore spaces & case) |
+| `largest-sum-consecutive-num` | `maxSubArraySum` | sliding window | Max sum of consecutive subarray of size k |
+| `count-character-frequency` | `maxSubArraySum` | sliding window | Same sliding-window problem as above |
 
 ## Adding a problem
 
