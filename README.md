@@ -51,6 +51,13 @@ Each problem file includes a `Hint:` comment with the suggested pattern.
 | `valid-palindrome` | `isPalindrome` | two pointers | Palindrome check (ignore spaces & case) |
 | `largest-sum-consecutive-num` | `maxSubArraySum` | sliding window | Max sum of consecutive subarray of size k |
 | `count-character-frequency` | `maxSubArraySum` | sliding window | Same sliding-window problem as above |
+| `contains-duplicate` | `containsDuplicate` | hash set | Any value appears more than once |
+| `fizz-buzz` | `fizzBuzz` | iteration (simulation) | FizzBuzz from 1 to n |
+| `merge-sorted-arrays` | `mergeSortedArrays` | two pointers | Merge two sorted arrays without `sort()` |
+| `largest-in-each-array` | `largestInEachArray` | array iteration | Largest number in each nested array |
+| `reverse-words` | `reverseWords` | string manipulation | Reverse word order in a sentence |
+| `intersection` | `intersection` | hash set | Unique common values between two arrays |
+| `count-vowels` | `countVowels` | string iteration | Count vowels (case-insensitive) |
 
 ## Adding a problem
 
