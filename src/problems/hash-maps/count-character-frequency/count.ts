@@ -21,6 +21,47 @@ Explanation:
 */
 
 export function maxSubArraySum(arr: number[], size: number): number {
-  // your code here
-  return 0;
+  // edge case:
+  // if the array is smaller than the window size, return 0
+  if (arr.length < size) return 0;
+
+  // track the current window total
+  let currentSum = 0;
+
+  // track the largest sum found
+  let maxSum = 0;
+
+  // build the first window
+  // example:
+  // if size = 2
+  // add arr[0] + arr[1]
+  for (let i = 0; i < size; i++) {
+    currentSum += arr[i];
+  }
+
+  // the first window is the largest seen so far
+  maxSum = currentSum;
+
+  // slide the window across the array
+  for (let i = size; i < arr.length; i++) {
+    // remove the value leaving the window
+    // add the new value entering the window
+    currentSum = currentSum - arr[i - size] + arr[i];
+
+    // if the new window sum is larger, update maxSum
+    if (currentSum > maxSum) {
+      maxSum = currentSum;
+    }
+  }
+
+  // return the largest consecutive sum found
+  return maxSum;
 }
+
+console.log(maxSubArraySum([1, 2, 3, 4, 5], 2));
+console.log(maxSubArraySum([1, 2], 3)); 
+console.log(maxSubArraySum([], 1));
+console.log(maxSubArraySum([1, 2, 3], 3));
+console.log(maxSubArraySum([4, -1, 7, 2], 1));
+console.log(maxSubArraySum([10, 9, 1, 2], 2));
+console.log(maxSubArraySum([2, 1, 5, 1, 3, 2], 3));
