@@ -22,6 +22,37 @@ false
 */
 
 export function containsDuplicate(nums: number[]): boolean {
-  // your code here
+  const seen = new Set<number>();
+
+  for (const num of nums) {
+    // show current number being checked
+    console.log("checking:", num);
+
+    // show current Set contents
+    console.log("seen currently:", [...seen]);
+
+    // check if duplicate exists
+    if (seen.has(num)) {
+      console.log("duplicate found:", num);
+
+      return true;
+    }
+
+    // add current number to Set
+    seen.add(num);
+
+    // show Set after adding
+    console.log("after add:", [...seen]);
+  }
+
+  console.log("no duplicates found");
+
   return false;
 }
+
+console.log(containsDuplicate([1, 2, 3, 1]));
+console.log(containsDuplicate([1, 2, 3, 4]));
+console.log(containsDuplicate([1, 1]));
+console.log(containsDuplicate([7]));
+console.log(containsDuplicate([]));
+console.log(containsDuplicate([1, 2, 3, 4, 5, 1]));
