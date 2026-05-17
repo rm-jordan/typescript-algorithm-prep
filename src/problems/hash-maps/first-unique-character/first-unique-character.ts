@@ -24,41 +24,54 @@ null
 */
 
 export function firstUniqueCharacter(str: string): string | null {
-  // your code here
+  // create an object to store character counts
   const counts: Record<string, number> = {};
 
-   // convert the string to lowercase
+  // normalize the string so uppercase/lowercase match
+  str = str.toLowerCase();
 
-  // first loop:
-  // go through each character in the string
+  console.log("normalized string:", str);
 
-  // if the character already exists in the counts object:
-  // increase its count
+  // FIRST LOOP:
+  // count how many times each character appears
+  for (const char of str) {
+    // if the character exists already:
+    // increase the count
+    // otherwise:
+    // start at 1
+    counts[char] = (counts[char] || 0) + 1;
 
-  // otherwise:
-  // start its count at 1
+    // helpful debug log
+    console.log("building counts:", counts);
+  }
 
-  // after the first loop:
-  // the counts object should look something like:
-  // { a: 2, b: 2, c: 1 }
+  console.log("final counts object:", counts);
 
-  // second loop:
+  // SECOND LOOP:
   // go through the string again in original order
+  for (const char of str) {
+    console.log("checking character:", char);
+    console.log("character count:", counts[char]);
 
-  // check each character's count
+    // if this character appeared only once:
+    // return it immediately
+    if (counts[char] === 1) {
+      console.log("first unique character found:", char);
 
-  // if a character count equals 1:
-  // return that character immediately
+      return char;
+    }
+  }
 
-  // if the loop finishes:
-  // return null because no unique character exists
+  // if we finished the loop:
+  // no unique characters exist
+  console.log("no unique character found");
 
   return null;
 }
 
 console.log(firstUniqueCharacter("aabbcdde"));
-console.log(firstUniqueCharacter("aabbcc"));
-console.log(firstUniqueCharacter("AaBbCcDdE"));
-console.log(firstUniqueCharacter("z"));
-console.log(firstUniqueCharacter("zabbcc"));
-console.log(firstUniqueCharacter(""));
+// console.log(firstUniqueCharacter("aabbcc"));
+// console.log(firstUniqueCharacter("AaBbCcDdE"));
+// console.log(firstUniqueCharacter("z"));
+// console.log(firstUniqueCharacter("zabbcc"));
+// console.log(firstUniqueCharacter(""));
