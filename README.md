@@ -28,7 +28,7 @@ src/problems/<category>/<slug>/
   <name>.test.ts
 ```
 
-A few folders use shorter filenames: `strings/valid-palindrome/palidrome.ts`, `arrays/largest-sum-consecutive-num/largest.ts`, `hash-maps/count-character-frequency/count.ts`.
+A few folders use shorter filenames: `arrays/largest-sum-consecutive-num/largest.ts`, `hash-maps/count-character-frequency/count.ts`.
 
 Stubs export the function and return a placeholder so tests compile; implement the logic and tests will pass.
 

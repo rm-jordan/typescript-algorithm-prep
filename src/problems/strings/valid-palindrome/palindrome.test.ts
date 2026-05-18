@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { isPalindrome } from "./palidrome.js";
+import { isPalindrome } from "./palindrome.js";
 
 describe("isPalindrome", () => {
   it("returns true for a palindrome regardless of capitalization", () => {
