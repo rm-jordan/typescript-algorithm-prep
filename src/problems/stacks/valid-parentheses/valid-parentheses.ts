@@ -34,34 +34,49 @@ true
 */
 
 export function isValidParentheses(str: string): boolean {
-  const stack: string[] = []
-  console.log("stack", stack)
+  // stack stores opening brackets
+  const stack: string[] = [];
 
-    // map closing brackets to their matching opening brackets
-    const pairs: Record<string, string> = {
-      ")": "(",
-      "]": "[",
-      "}": "{",
-    };
-    console.log("pairs",pairs)
+  // closing bracket -> matching opening bracket
+  const pairs: Record<string, string> = {
+    ")": "(",
+    "]": "[",
+    "}": "{",
+  };
 
-      // loop through each character in the string
+  // loop through each character
   for (const char of str) {
-    // next step:
-    // if char is an opening bracket, push it onto the stack
+    console.log("current char:", char);
 
-    // if char is a closing bracket:
-    // pop the top item from the stack
-    // check if it matches the expected opening bracket
+    // if opening bracket:
+    // push onto stack
+    if (char === "(" || char === "[" || char === "{") {
+      stack.push(char);
+
+      console.log("pushed to stack:", stack);
+    }
+
+    // if closing bracket:
+    // pop and compare
+    if (char in pairs) {
+      const top = stack.pop();
+
+      console.log("top popped:", top);
+      console.log("expected:", pairs[char]);
+
+      // if mismatch:
+      // invalid parentheses
+      if (top !== pairs[char]) {
+        return false;
+      }
+    }
   }
 
-  // after loop:
-  // stack should be empty if everything matched correctly
-
-  return false;
+  // valid only if stack is empty
+  return stack.length === 0;
 }
 
 console.log(isValidParentheses("()")); // true
-console.log(isValidParentheses("()[]{}")); // true
-console.log(isValidParentheses("(]")); // false
-console.log(isValidParentheses("([{}])")); // true
+// console.log(isValidParentheses("()[]{}")); // true
+// console.log(isValidParentheses("(]")); // false
+// console.log(isValidParentheses("([{}])")); // true
