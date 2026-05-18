@@ -26,8 +26,25 @@ false
 */
 
 export function isPalindrome(str: string): boolean {
-  // your code here
-  return false;
+  // Step 1: conver the string to a lowercase and remove all non alphanumeric characters
+  // compare characters and if not equal return false, move in, if loop finishes return true
+  const cleaned = str.toLowerCase().replace(/[^a-z0-9]/g, "");
+
+  let left = 0;
+  let right = cleaned.length - 1;
+
+  while (left < right) {
+    if (cleaned[left] !== cleaned[right]) {
+      return false;
+    }
+
+    left++;
+    right--;
+  }
+
+
+
+  return true;
 }
 
 
